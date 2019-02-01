@@ -1,0 +1,8 @@
+table {
+    width: 100%;
+  }
+.displayed{
+visibility: hidden;
+display: none;
+width: 0%;
+  }

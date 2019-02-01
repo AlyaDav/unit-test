@@ -1,0 +1,7 @@
+<app-header (createNewPayment)="onCreateNewPayment($event)">
+</app-header>
+<app-table [payTable]="payTable" (deleteRowPayment)="onDeletePayment($event)" (changeMonthsInTable)="onChangeMonths($event)">
+</app-table>
+<app-summary [allSum]="allSumInMonths">
+</app-summary>
+<!-- <div class="displayed">{{payTable}}</div> -->

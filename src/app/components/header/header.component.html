@@ -1,0 +1,19 @@
+<h1>Состояние платежей</h1>
+<div>
+<form [formGroup]="newPay" class="example-form" #formDirective="ngForm" (ngSubmit)="onSubmit(newPay, formDirective)">
+
+  <mat-form-field class="example-full-width">
+    <input  matInput placeholder="Наименованение платежа" formControlName="newNamePay">
+    <mat-error *ngIf="newPay.controls.newNamePay.invalid">Название обязательно
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Стоимость за день" formControlName="newCostDay">
+    <mat-error *ngIf="newPay.controls.newCostDay.invalid">Стоимость некорректна
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button class="button" type="submit" [disabled]="newPay.invalid">Добавить</button>
+</form>
+</div>
