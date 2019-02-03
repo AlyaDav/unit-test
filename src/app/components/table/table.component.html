@@ -1,0 +1,35 @@
+<div class="matTable">
+
+
+<table mat-table [dataSource]="payTable" submit=createNewPayment() class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Наименование платежа">
+    <th mat-header-cell *matHeaderCellDef> Наименование платежа </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Стоимость за день">
+    <th mat-header-cell *matHeaderCellDef> Стоимость за день </th>
+    <td mat-cell *matCellDef="let element"> {{element.cost}} </td>
+  </ng-container>
+
+  <div *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11]">
+    <ng-container matColumnDef={{displayedColumns[i+2]}}>
+      <th mat-header-cell *matHeaderCellDef> {{displayedColumns[i+2]}} </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox [checked]="element.months[i].value" (change)="changeMonths(element, element.months[i])"></mat-checkbox>
+      </td>
+    </ng-container>
+  </div>
+
+  <ng-container matColumnDef="Удалить">
+    <th mat-header-cell *matHeaderCellDef>Удалить</th>
+    <td mat-cell *matCellDef="let element"><i class="material-icons" (click)=deletePayment(element)>
+        highlight_off
+      </i></td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+</div>
