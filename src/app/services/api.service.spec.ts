@@ -69,7 +69,7 @@ describe('ApiService', () => {
     testService = TestBed.get(ApiService);
     expect(testService).toBeTruthy();
   });
-
+  
 
   it('#getPayment should return an array with Payment objects',async() => {
     testService = TestBed.get(ApiService);
