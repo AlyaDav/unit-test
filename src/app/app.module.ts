@@ -32,6 +32,9 @@ import { SummaryComponent } from './components/summary/summary.component';
     MatInputModule,
     FormsModule
   ],
+  exports: [
+    //MainComponent
+  ],
   providers: [
     {
       provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher

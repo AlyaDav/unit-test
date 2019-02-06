@@ -28,8 +28,8 @@ export class PaymentService {
 
   calculateOnePayment(currentPayment: Payment): number {
     let sumInOnePayment: number = 0;
-    for (var i = 0; i < 12; i++) {
-      if (currentPayment.months[i].value == true) { sumInOnePayment++ }
+    for (let i = 0; i < currentPayment.months.length; i++) {
+      if (currentPayment.months[i].value) { sumInOnePayment++ }
     }
     sumInOnePayment = sumInOnePayment * currentPayment.cost;
     return sumInOnePayment;

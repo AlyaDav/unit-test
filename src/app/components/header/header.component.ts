@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   newPay: FormGroup;
-
+  formDirective: FormGroupDirective;
   ngOnInit() {
     this.newPay = this.formBuilder.group({
       newNamePay: ['', Validators.required],
@@ -26,8 +26,7 @@ export class HeaderComponent implements OnInit {
   onSubmit( formDirective: FormGroupDirective) {
     let name = this.formControl.newNamePay.value;
     let cost = this.formControl.newCostDay.value;
-  
-    formDirective.resetForm();
+    if (formDirective) formDirective.resetForm();
     this.createNewPayment.emit({ name: name, cost: cost } as Payment);
   }
 

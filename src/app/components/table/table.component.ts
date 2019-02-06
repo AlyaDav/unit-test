@@ -17,7 +17,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatTable) matTable: MatTable<any>;
 
   constructor() { }
-  
+
   displayedColumns: string[] = [
     'Наименование платежа', 'Стоимость за день', 'Янв',
     'Фев', 'Мар', 'Апр', 'Май',
@@ -28,7 +28,7 @@ export class TableComponent implements OnInit {
 
   deletePayment(currentPayment: Payment) {
     this.deleteRowPayment.emit(currentPayment);
-    this.matTable.renderRows();
+    this.matTable.renderRows(); // не знаю как использовать в тесте
   }
 
   changeMonths(currentPayment: Payment, currentMonth: Month) {

@@ -1,24 +1,28 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { MainComponent } from './components/main/main.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+
+let comp: AppComponent;
+let fixture: ComponentFixture<AppComponent>;
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach((() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        MainComponent
       ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
-  // it('should create the app', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app).toBeTruthy();
-  // });
+  beforeEach((() => {
+    fixture = TestBed.createComponent(AppComponent);
+    comp = fixture.debugElement.componentInstance;
+  }));
 
-  // it(`should have as title 'payments-table'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.title).toEqual('payments-table');
-  // });
+  it(`should have as title 'payments-table'`, () => {
+    expect(comp.title).toEqual('payments-table');
+  });
 });
