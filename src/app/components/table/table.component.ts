@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Input, Output, EventEmitter, SimpleChange
 import { MatTable } from '@angular/material/table';
 import { Payment } from 'src/app/models/payment';
 import { Month } from 'src/app/models/month';
+import { mockDisplayedColumns } from 'src/app/mock/ payments';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +10,7 @@ import { Month } from 'src/app/models/month';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-
+  displayedColumns:string[];
   @Input() payTable: Payment[];
 
   @Output() deleteRowPayment = new EventEmitter<Payment>();
@@ -18,17 +19,11 @@ export class TableComponent implements OnInit {
 
   constructor() { }
 
-  displayedColumns: string[] = [
-    'Наименование платежа', 'Стоимость за день', 'Янв',
-    'Фев', 'Мар', 'Апр', 'Май',
-    'Июн', 'Июл', 'Авг', 'Сен',
-    'Окт', 'Ноя', 'Дек', 'Удалить'];
-
-  ngOnInit() { }
+  ngOnInit() { this.displayedColumns=mockDisplayedColumns;}
 
   deletePayment(currentPayment: Payment) {
     this.deleteRowPayment.emit(currentPayment);
-    this.matTable.renderRows(); // не знаю как использовать в тесте
+    this.matTable.renderRows(); 
   }
 
   changeMonths(currentPayment: Payment, currentMonth: Month) {

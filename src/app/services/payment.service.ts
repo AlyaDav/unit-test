@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Payment } from '../models/payment';
 import { Month } from '../models/month';
+import { mockMonths } from '../mock/months';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PaymentService {
 
   createNewPayment(payment: Payment, payTable: Payment[]): Payment[] {
     let months: Month[] = [];
-    for (var i = 0; i < 12; i++) {
+    for (var i = 0; i < mockMonths[0].months.length; i++) {
       months.push({ index: i, value: false });
     }
     const newPayment: Payment = payment;

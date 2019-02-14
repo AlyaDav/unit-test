@@ -5,16 +5,17 @@
 
   <mat-form-field class="example-full-width">
     <input  matInput placeholder="Наименованение платежа" formControlName="newNamePay">
-    <mat-error *ngIf="newPay.controls.newNamePay.invalid">Название обязательно
+    <mat-error *ngIf="newPay.controls.newNamePay.hasError('required') && newPay.controls.newNamePay.touched">Название обязательно
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <input type="number" matInput placeholder="Стоимость за день" formControlName="newCostDay">
-    <mat-error *ngIf="newPay.controls.newCostDay.invalid">Стоимость некорректна
+    <mat-error *ngIf="newPay.controls.newCostDay.hasError('required') && newPay.controls.newCostDay.touched">Стоимость некорректна
     </mat-error>
   </mat-form-field>
 
   <button mat-raised-button class="button" type="submit" [disabled]="newPay.invalid">Добавить</button>
 </form>
 </div>
+

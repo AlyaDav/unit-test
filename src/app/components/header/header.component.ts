@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, Validators, FormBuilder, FormGroupDirective } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Payment } from 'src/app/models/payment';
 
 @Component({
@@ -10,11 +10,10 @@ import { Payment } from 'src/app/models/payment';
 export class HeaderComponent implements OnInit {
 
   @Output() createNewPayment = new EventEmitter<Payment>();
+  newPay: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
 
-  newPay: FormGroup;
-  formDirective: FormGroupDirective;
   ngOnInit() {
     this.newPay = this.formBuilder.group({
       newNamePay: ['', Validators.required],
@@ -23,15 +22,14 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  onSubmit( formDirective: FormGroupDirective) {
-    let name = this.formControl.newNamePay.value;
-    let cost = this.formControl.newCostDay.value;
-    if (formDirective) formDirective.resetForm();
-    this.createNewPayment.emit({ name: name, cost: cost } as Payment);
-  }
+  onSubmit() {
+    const value = this.newPay.value;
 
-  get formControl(): any {
-    return this.newPay.controls;
+    this.newPay.reset();
+    // inputs clear witout errors
+    this.newPay.get('newNamePay').setErrors(null);
+    this.newPay.get('newCostDay').setErrors(null);
+    this.createNewPayment.emit({ name: value.newNamePay, cost: value.newCostDay } as Payment);
   }
 
 }

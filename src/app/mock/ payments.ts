@@ -1,376 +1,46 @@
 import { Payment } from "../models/payment";
+import { mockMonths } from "./months";
 
 export const payments: Payment[] = [
     {
         name: 'Интернет',
         cost: 600,
-        months: [
-            {
-                index: 0,
-                value: true
-            },
-            {
-                index: 1,
-                value: true
-            },
-            {
-                index: 2,
-                value: false
-            },
-            {
-                index: 3,
-                value: false
-            },
-            {
-                index: 4,
-                value: false
-            },
-            {
-                index: 5,
-                value: false
-            },
-            {
-                index: 6,
-                value: false
-            },
-            {
-                index: 7,
-                value: false
-            },
-            {
-                index: 8,
-                value: false
-            },
-            {
-                index: 9,
-                value: false
-            },
-            {
-                index: 10,
-                value: false
-            },
-            {
-                index: 11,
-                value: false
-            },
-        ]
+        months: mockMonths[0].months
     },
     {
         name: 'Домашний телефон',
         cost: 500,
-        months: [
-            {
-                index: 0,
-                value: false
-            },
-            {
-                index: 1,
-                value: false
-            },
-            {
-                index: 2,
-                value: false
-            },
-            {
-                index: 3,
-                value: false
-            },
-            {
-                index: 4,
-                value: false
-            },
-            {
-                index: 5,
-                value: false
-            },
-            {
-                index: 6,
-                value: false
-            },
-            {
-                index: 7,
-                value: false
-            },
-            {
-                index: 8,
-                value: false
-            },
-            {
-                index: 9,
-                value: false
-            },
-            {
-                index: 10,
-                value: false
-            },
-            {
-                index: 11,
-                value: false
-            },]
+        months: mockMonths[1].months
     },
     {
         name: 'Мобильный телефон',
         cost: 300,
-        months: [
-            {
-                index: 0,
-                value: true
-            },
-            {
-                index: 1,
-                value: true
-            },
-            {
-                index: 2,
-                value: true
-            },
-            {
-                index: 3,
-                value: false
-            },
-            {
-                index: 4,
-                value: false
-            },
-            {
-                index: 5,
-                value: false
-            },
-            {
-                index: 6,
-                value: false
-            },
-            {
-                index: 7,
-                value: false
-            },
-            {
-                index: 8,
-                value: false
-            },
-            {
-                index: 9,
-                value: false
-            },
-            {
-                index: 10,
-                value: false
-            },
-            {
-                index: 11,
-                value: false
-            },]
+        months: mockMonths[2].months
     },
     {
         name: 'IPTV',
         cost: 200,
-        months: [
-            {
-                index: 0,
-                value: false
-            },
-            {
-                index: 1,
-                value: false
-            },
-            {
-                index: 2,
-                value: true
-            },
-            {
-                index: 3,
-                value: true
-            },
-            {
-                index: 4,
-                value: false
-            },
-            {
-                index: 5,
-                value: false
-            },
-            {
-                index: 6,
-                value: false
-            },
-            {
-                index: 7,
-                value: false
-            },
-            {
-                index: 8,
-                value: false
-            },
-            {
-                index: 9,
-                value: false
-            },
-            {
-                index: 10,
-                value: false
-            },
-            {
-                index: 11,
-                value: false
-            },]
+        months: mockMonths[3].months
     },
     {
         name: 'Подписка на музыку',
         cost: 150,
-        months: [
-            {
-                index: 0,
-                value: false
-            },
-            {
-                index: 1,
-                value: false
-            },
-            {
-                index: 2,
-                value: true
-            },
-            {
-                index: 3,
-                value: true
-            },
-            {
-                index: 4,
-                value: false
-            },
-            {
-                index: 5,
-                value: false
-            },
-            {
-                index: 6,
-                value: false
-            },
-            {
-                index: 7,
-                value: false
-            },
-            {
-                index: 8,
-                value: false
-            },
-            {
-                index: 9,
-                value: false
-            },
-            {
-                index: 10,
-                value: false
-            },
-            {
-                index: 11,
-                value: false
-            },]
+        months: mockMonths[4].months
     },
     {
         name: 'Подписка на фильмы',
         cost: 150,
-        months: [
-            {
-                index: 0,
-                value: false
-            },
-            {
-                index: 1,
-                value: false
-            },
-            {
-                index: 2,
-                value: true
-            },
-            {
-                index: 3,
-                value: true
-            },
-            {
-                index: 4,
-                value: false
-            },
-            {
-                index: 5,
-                value: false
-            },
-            {
-                index: 6,
-                value: false
-            },
-            {
-                index: 7,
-                value: false
-            },
-            {
-                index: 8,
-                value: false
-            },
-            {
-                index: 9,
-                value: false
-            },
-            {
-                index: 10,
-                value: false
-            },
-            {
-                index: 11,
-                value: false
-            },]
+        months: mockMonths[5].months
     },
     {
         name: 'Абонимент на фитнес',
         cost: 1000,
-        months: [
-            {
-                index: 0,
-                value: false
-            },
-            {
-                index: 1,
-                value: false
-            },
-            {
-                index: 2,
-                value: false
-            },
-            {
-                index: 3,
-                value: true
-            },
-            {
-                index: 4,
-                value: false
-            },
-            {
-                index: 5,
-                value: false
-            },
-            {
-                index: 6,
-                value: false
-            },
-            {
-                index: 7,
-                value: false
-            },
-            {
-                index: 8,
-                value: false
-            },
-            {
-                index: 9,
-                value: false
-            },
-            {
-                index: 10,
-                value: false
-            },
-            {
-                index: 11,
-                value: false
-            },]
+        months: mockMonths[6].months
     }
 ]
+
+export const mockDisplayedColumns: string[] = [
+    'Наименование платежа', 'Стоимость за день', 'Янв',
+    'Фев', 'Мар', 'Апр', 'Май',
+    'Июн', 'Июл', 'Авг', 'Сен',
+    'Окт', 'Ноя', 'Дек', 'Удалить'];

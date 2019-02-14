@@ -149,9 +149,7 @@ describe('HeaderComponent', () => {
     comp.newPay.controls['newCostDay'].setValue(600);
     expect(comp.newPay.valid).toBeTruthy();
 
-    formDirective = comp.formDirective;
-
-    comp.onSubmit(formDirective); // for emit
+    comp.onSubmit(); // for emit
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       fixture.detectChanges();

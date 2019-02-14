@@ -7,7 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { payments } from 'src/app/mock/ payments';
+import { payments, mockDisplayedColumns } from 'src/app/mock/ payments';
 import { Month } from 'src/app/models/month';
 
 describe('TableComponent', () => {
@@ -21,6 +21,7 @@ describe('TableComponent', () => {
   let mockPayments: Payment[];
   let mockMonths: Month;
   let responsePaymentMonth;
+  let testMockDisplayedColumns: string[];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -101,6 +102,8 @@ describe('TableComponent', () => {
     }
     mockMonths = mockPayment.months[0];
     mockPayments = payments;
+    testMockDisplayedColumns = mockDisplayedColumns;
+    comp.displayedColumns = testMockDisplayedColumns;
   }));
 
   it('should have a Component TableComponent', () => {
@@ -120,22 +123,20 @@ describe('TableComponent', () => {
     comp.deletePayment(mockPayment);
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      fixture.detectChanges();
       expect(responsePayment.name).toEqual(mockPayment.name);
       expect(responsePayment.cost).toEqual(mockPayment.cost);
-    
     });
   });
 
   it('#Payment col-vo row', () => {
-    comp.deletePayment(mockPayment);
+    comp.displayedColumns = testMockDisplayedColumns;
     fixture.detectChanges();
     let tableRows = fixture.nativeElement.querySelectorAll('th');
     expect(tableRows.length).toBe(15);
   });
 
   it('emit changeMonths', () => {
-    comp.payTable = [mockPayment, mockPayment] as Payment[]; 
+    comp.payTable = [mockPayment, mockPayment] as Payment[];
     comp.changeMonths(mockPayment, mockMonths);
     fixture.detectChanges();
     fixture.whenStable().then(() => {
