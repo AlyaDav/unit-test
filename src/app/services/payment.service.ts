@@ -12,7 +12,7 @@ export class PaymentService {
 
   createNewPayment(payment: Payment, payTable: Payment[]): Payment[] {
     let months: Month[] = [];
-    for (var i = 0; i < mockMonths[0].months.length; i++) {
+    for (var i = 0; i < mockMonths[0].length; i++) {
       months.push({ index: i, value: false });
     }
     const newPayment: Payment = payment;

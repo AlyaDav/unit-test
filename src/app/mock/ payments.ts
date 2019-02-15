@@ -5,37 +5,37 @@ export const payments: Payment[] = [
     {
         name: 'Интернет',
         cost: 600,
-        months: mockMonths[0].months
+        months: mockMonths[0]
     },
     {
         name: 'Домашний телефон',
         cost: 500,
-        months: mockMonths[1].months
+        months: mockMonths[1]
     },
     {
         name: 'Мобильный телефон',
         cost: 300,
-        months: mockMonths[2].months
+        months: mockMonths[2]
     },
     {
         name: 'IPTV',
         cost: 200,
-        months: mockMonths[3].months
+        months: mockMonths[3]
     },
     {
         name: 'Подписка на музыку',
         cost: 150,
-        months: mockMonths[4].months
+        months: mockMonths[4]
     },
     {
         name: 'Подписка на фильмы',
         cost: 150,
-        months: mockMonths[5].months
+        months: mockMonths[5]
     },
     {
         name: 'Абонимент на фитнес',
         cost: 1000,
-        months: mockMonths[6].months
+        months: mockMonths[6]
     }
 ]
 

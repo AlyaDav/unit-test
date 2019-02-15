@@ -119,15 +119,6 @@ describe('TableComponent', () => {
     expect(table.innerText.replace(/\s\s+/g, '')).toBe("", "table should be empty");
   });
 
-  it('#deletePayment emit', () => {
-    comp.deletePayment(mockPayment);
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
-      expect(responsePayment.name).toEqual(mockPayment.name);
-      expect(responsePayment.cost).toEqual(mockPayment.cost);
-    });
-  });
-
   it('#Payment col-vo row', () => {
     comp.displayedColumns = testMockDisplayedColumns;
     fixture.detectChanges();
